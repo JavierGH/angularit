@@ -1,0 +1,10 @@
+<!--
+<div>{{name}}</div>
+-->
+
+<div *ngIf="isLogin()">{{user}}</div>
+<button *ngIf="!isLogin()">Login</button>
+
+<div class="grid" (click)="hanlderClick($event)">
+  <div class="day" [attr.data-day]="item" *ngFor="let item of array">{{item}}</div>
+</div>
