@@ -5,6 +5,9 @@
 <div *ngIf="isLogin()">{{user}}</div>
 <button *ngIf="!isLogin()">Login</button>
 
-<div class="grid" (click)="hanlderClick($event)">
-  <app-day class="day" [day] ="day" [attr.data-day]="day"  *ngFor="let day of array"></app-day>
+<div class="grid" >
+  <app-day class="day" [day] ="day" 
+  (handlerDay)="handlerDay($event)"
+  [attr.data-day]="day"  
+  *ngFor="let day of array"></app-day>
 </div>

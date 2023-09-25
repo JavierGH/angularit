@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-day',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class DayComponent {
   @Input() day:number=0;
+  @Output() handlerDay= new EventEmitter<number>()
+  @HostListener('click')
+  Click(){
+    this.handlerDay.emit(this.day)
+  }
 }

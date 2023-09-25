@@ -39,4 +39,7 @@ export class AppComponent {
     const {day} = element.dataset;
     console.log(day);*/
   }
+  handlerDay(day:number){
+    console.log(day)
+  }
 }
