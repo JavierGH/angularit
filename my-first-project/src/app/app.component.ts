@@ -15,7 +15,7 @@ function* generator(){
 
 
 export class AppComponent {
-  name = 1+1;
+  name = "pedro";
   array = [...generator()]
   user ="Pedro";
 

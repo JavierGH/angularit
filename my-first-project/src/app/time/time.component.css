@@ -1,0 +1,6 @@
+/*https://developer.mozilla.org/es/docs/Web/CSS/:host*/
+
+:host{
+    display:block;
+    font-size: 3.5rem;
+}

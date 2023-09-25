@@ -1,6 +1,8 @@
-<!--
-<div>{{name}}</div>
--->
+
+<app-time></app-time>
+
+<div>{{name|upper}}</div>
+
 
 <div *ngIf="isLogin()">{{user}}</div>
 <button *ngIf="!isLogin()">Login</button>
