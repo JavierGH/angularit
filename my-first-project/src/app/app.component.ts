@@ -1,5 +1,6 @@
 import { formatCurrency } from '@angular/common';
 import { Component } from '@angular/core';
+
 function* generator(){
   for(var i=0;i<31;i++){
     yield i+1;
