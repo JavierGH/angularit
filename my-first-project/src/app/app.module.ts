@@ -11,6 +11,7 @@ import { HelloComponent } from './hello/hello.component';
 
 import { Customer, Invoices, Service, PATHCUSTOMER, PATHINVOICES } from './hello.service';
 //import { HelloService } from './hello.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 
@@ -25,7 +26,8 @@ import { Customer, Invoices, Service, PATHCUSTOMER, PATHINVOICES } from './hello
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   /*providers:[
     HelloService
@@ -34,12 +36,15 @@ import { Customer, Invoices, Service, PATHCUSTOMER, PATHINVOICES } from './hello
   providers: [
     {
       provide: PATHCUSTOMER,
-      useFactory: () => new Service<Customer>("/customers")
+      useFactory: (http:HttpClient) => new Service<Customer>("/customers", http),
+      deps:[HttpClient]
     },
     
     {
+
       provide:PATHINVOICES,
-      useFactory:()=>new Service<Invoices>("/invoides")
+      useFactory:(http:HttpClient)=>new Service<Invoices>("/invoides",http),
+      deps:[HttpClient]
     },
   ],
   bootstrap: [AppComponent]

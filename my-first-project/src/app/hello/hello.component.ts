@@ -1,4 +1,6 @@
 import { Component, Inject } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+
 import { Customer, 
   HelloService, 
   Invoices, 
@@ -15,7 +17,7 @@ import { Customer,
 export class HelloComponent {
   public data = ''
   constructor(
-    private service: HelloService,
+    private service: HelloService,  
     
     @Inject(PATHCUSTOMER) 
     private customerService: Service<Customer>,
@@ -25,7 +27,14 @@ export class HelloComponent {
 
   ) {
     this.data = this.service.get();
-    this.customerService.get({ id: "1" });
-    this.invoiceService.get({id:"1",name:"Pedro Hurtado"})
+    
+
+    /*this.http.get<Invoices>("")
+      .subscribe(invoices=>invoices)*/
+
+  }
+  
+  async getData(){    
+      const customer = await this.customerService.get();      
   }
 }

@@ -1,5 +1,7 @@
 //root
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable,lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,18 +22,13 @@ export class HelloService {
 
 export class Service<T>{
   private readonly path:string;
-  constructor(path:string){
+  private readonly http:HttpClient
+  constructor(path:string, http:HttpClient){
     this.path = path;
+    this.http = http;
   }
-  get(t:T){
-      
-      const result = `
-         path:
-            ${this.path}
-         data: 
-            ${JSON.stringify(t)}
-      `
-      console.log(result)
+  get():Promise<T>{
+      return lastValueFrom(this.http.get<T>(""))      
   }
 }
 
