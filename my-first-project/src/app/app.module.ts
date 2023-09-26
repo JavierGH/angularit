@@ -7,6 +7,12 @@ import { DayComponent } from './day/day.component';
 import { UpperPipe } from './upper.pipe';
 import { TimePipe } from './time.pipe';
 import { TimeComponent } from './time/time.component';
+import { HelloComponent } from './hello/hello.component';
+
+import { Customer, Invoices, Service, PATHCUSTOMER, PATHINVOICES } from './hello.service';
+//import { HelloService } from './hello.service';
+
+
 
 @NgModule({
   declarations: [
@@ -14,13 +20,28 @@ import { TimeComponent } from './time/time.component';
     DayComponent,
     UpperPipe,
     TimePipe,
-    TimeComponent
+    TimeComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  /*providers:[
+    HelloService
+  ]*/
+
+  providers: [
+    {
+      provide: PATHCUSTOMER,
+      useFactory: () => new Service<Customer>("/customers")
+    },
+    
+    {
+      provide:PATHINVOICES,
+      useFactory:()=>new Service<Invoices>("/invoides")
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
