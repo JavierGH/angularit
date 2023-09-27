@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Invoices, Service } from 'src/app/hello.service';
+import { spinner } from 'src/app/spiiner';
 
 @Component({
   selector: 'app-list',
@@ -15,6 +16,7 @@ export class ListComponent {
   constructor(private service:Service<Invoices> ){
     this.getData();
   }
+  @spinner()
   async getData(){
     this.invoices = await this.service.getAll()
   }
