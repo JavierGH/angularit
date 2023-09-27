@@ -13,6 +13,7 @@ import { Customer, Invoices, Service, PATHCUSTOMER, PATHINVOICES } from './hello
 //import { HelloService } from './hello.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { InvoicesModule } from './invoices/invoices.module';
+import { CustomerModule } from './customer/customer.module';
 
 
 
@@ -29,7 +30,8 @@ import { InvoicesModule } from './invoices/invoices.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InvoicesModule
+    InvoicesModule,
+    CustomerModule
   ],
   /*providers:[
     HelloService

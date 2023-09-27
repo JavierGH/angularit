@@ -1,12 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 
-import { Customer, 
-  HelloService, 
-  Invoices, 
-  PATHCUSTOMER, 
+import { Customer,
+  HelloService,
+  Invoices,
+  PATHCUSTOMER,
   PATHINVOICES,
-  Service } 
+  Service }
   from '../hello.service';
 
 @Component({
@@ -17,9 +17,9 @@ import { Customer,
 export class HelloComponent {
   public data = ''
   constructor(
-    private service: HelloService,  
-    
-    @Inject(PATHCUSTOMER) 
+    private service: HelloService,
+
+    @Inject(PATHCUSTOMER)
     private customerService: Service<Customer>,
 
     @Inject(PATHINVOICES)
@@ -27,14 +27,14 @@ export class HelloComponent {
 
   ) {
     this.data = this.service.get();
-    
+
 
     /*this.http.get<Invoices>("")
       .subscribe(invoices=>invoices)*/
 
   }
-  
-  async getData(){    
-      const customer = await this.customerService.get();      
+
+  async getData(){
+      const customers = await this.customerService.getAll();
   }
 }

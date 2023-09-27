@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
-import { Customer, Service } from 'src/app/hello.service';
+import { Invoices, Service } from 'src/app/hello.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  providers:[
+    {provide:'path', useValue:"/invoices.json"},
+    Service<Invoices>
+  ]
 })
 export class ListComponent {
-  constructor(private service:Service<Customer> ){
-      console.log(service)
+  public invoices:Invoices[] = []
+  constructor(private service:Service<Invoices> ){
+    this.getData();
   }
+  async getData(){
+    this.invoices = await this.service.getAll()
+  }
+
 }

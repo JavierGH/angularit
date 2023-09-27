@@ -13,10 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
   exports:[
     ListComponent
   ],
-  providers:[
-    {provide:'path', useValue:"/invoices"},
-    Service<Invoices>
-  ],
   imports: [
     HttpClientModule,
     CommonModule

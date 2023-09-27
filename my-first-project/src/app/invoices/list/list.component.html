@@ -1,1 +1,7 @@
-<p>list works!</p>
+<p>list invoices!</p>
+
+  <div *ngFor="let invoice of invoices">
+    <div>{{invoice.id}}</div>
+    <div>{{invoice.name}}</div>
+  </div>
+

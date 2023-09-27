@@ -15,6 +15,7 @@ export class HelloService {
     return "Hello Service get"
    }
 }
+const server_url = "http://localhost:8080/"
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,9 @@ export class Service<T>{
     this.path = path;
     this.http = http;
   }
-  get():Promise<T>{
-      return lastValueFrom(this.http.get<T>(""))
+  getAll():Promise<T[]>{
+      const url = `${server_url}${this.path}`
+      return lastValueFrom(this.http.get<T[]>(url))
   }
 }
 
