@@ -1,6 +1,6 @@
 //root
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable,lastValueFrom } from 'rxjs';
 
 @Injectable({
@@ -16,19 +16,18 @@ export class HelloService {
    }
 }
 
-/*@Injectable({
+@Injectable({
   providedIn: 'root'
-})*/
-
+})
 export class Service<T>{
   private readonly path:string;
   private readonly http:HttpClient
-  constructor(path:string, http:HttpClient){
+  constructor(@Inject("path") path:string, http:HttpClient){
     this.path = path;
     this.http = http;
   }
   get():Promise<T>{
-      return lastValueFrom(this.http.get<T>(""))      
+      return lastValueFrom(this.http.get<T>(""))
   }
 }
 

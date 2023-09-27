@@ -1,4 +1,4 @@
-
+<app-list></app-list>
 <app-hello></app-hello>
 <!--
 <app-hello></app-hello>
@@ -13,8 +13,8 @@
 <button *ngIf="!isLogin()">Login</button>
 
 <div class="grid" >
-  <app-day class="day" [day] ="day" 
+  <app-day class="day" [day] ="day"
   (handlerDay)="handlerDay($event)"
-  [attr.data-day]="day"  
+  [attr.data-day]="day"
   *ngFor="let day of array"></app-day>
 </div>
