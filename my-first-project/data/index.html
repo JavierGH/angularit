@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <form id="frm">
+      <input type="text" name="name">
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      const data = {}
+      const frm = document.getElementById('frm');
+      frm.addEventListener("keyup", (ev)=>{
+        //valida
+        data[ev.target.name] = ev.target.value;
+        console.log(data)
+      })
+      frm.addEventListener('submit',(ev)=>{
+        ev.preventDefault();
+
+        data.id = self.crypto.randomUUID();
+
+        fetch('/customers',{
+          method:'POST',
+          body:JSON.stringify(data),
+          headers:{
+            "content-type":"application/json",
+            "accept": "application/json"
+          }
+        })
+      })
+
+    </script>
+</body>
+</html>

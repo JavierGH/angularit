@@ -1,0 +1,8 @@
+form, .control{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.control{
+  width: max-content;
+}

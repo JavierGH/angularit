@@ -14,6 +14,10 @@ import { Customer, Invoices, Service, PATHCUSTOMER, PATHINVOICES } from './hello
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { InvoicesModule } from './invoices/invoices.module';
 import { CustomerModule } from './customer/customer.module';
+import { ProfileComponent } from './profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SumbitComponent } from './sumbit/sumbit.component';
+import { InputComponent } from './input/input.component';
 
 
 
@@ -24,14 +28,18 @@ import { CustomerModule } from './customer/customer.module';
     UpperPipe,
     TimePipe,
     TimeComponent,
-    HelloComponent
+    HelloComponent,
+    ProfileComponent,
+    SumbitComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     InvoicesModule,
-    CustomerModule
+    CustomerModule,
+    ReactiveFormsModule
   ],
   /*providers:[
     HelloService

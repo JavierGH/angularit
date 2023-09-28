@@ -1,0 +1,7 @@
+<form [formGroup]="profileForm" (submit)="handlerSubmit()">
+  <app-input
+    name="name"
+    label="Introduzca el nombre"
+    [formGroup]="profileForm" ></app-input>
+  <app-sumbit>Enviar</app-sumbit>
+</form>
