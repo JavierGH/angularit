@@ -21,6 +21,7 @@ import { InputComponent } from './input/input.component';
 import { Pagina1Component } from './pagina1/pagina1.component';
 import { Pagina2Component } from './pagina2/pagina2.component';
 import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -39,6 +40,7 @@ import { MenuComponent } from './menu/menu.component';
     Pagina1Component,
     Pagina2Component,
     MenuComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

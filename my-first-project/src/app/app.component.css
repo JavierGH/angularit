@@ -3,3 +3,9 @@
     grid-template-columns: repeat(7,1.5rem);
     gap:0.5rem;
 }
+
+:host{
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 1rem;
+}
