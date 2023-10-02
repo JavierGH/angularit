@@ -1,7 +1,9 @@
-<form [formGroup]="profileForm" (submit)="handlerSubmit()">
+<form [formGroup]="profileForm" (submit)="profileForm.valid && handlerSubmit()">
+
   <app-input
     name="name"
     label="Introduzca el nombre"
     [formGroup]="profileForm" ></app-input>
+  <div *ngIf="profileForm.valid && profileForm.dirty">El nombre es requerido</div>
   <app-sumbit>Enviar</app-sumbit>
 </form>

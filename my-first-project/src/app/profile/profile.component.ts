@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+
+
+interface Profile{
+  name:string
+}
 
 @Component({
   selector: 'app-profile',
@@ -8,10 +14,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ProfileComponent {
   profileForm = new FormGroup({
-    name:new FormControl(undefined)
+    name:new FormControl('', Validators.required)
   })
   handlerSubmit(){
-    console.log(this.profileForm.value)
+     this.send(this.profileForm.value as Profile)
+  }
+  send(profile:Profile){
+    console.log(profile)
   }
   constructor(){
 

@@ -18,6 +18,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SumbitComponent } from './sumbit/sumbit.component';
 import { InputComponent } from './input/input.component';
+import { Pagina1Component } from './pagina1/pagina1.component';
+import { Pagina2Component } from './pagina2/pagina2.component';
+import { MenuComponent } from './menu/menu.component';
+
 
 
 
@@ -31,7 +35,10 @@ import { InputComponent } from './input/input.component';
     HelloComponent,
     ProfileComponent,
     SumbitComponent,
-    InputComponent
+    InputComponent,
+    Pagina1Component,
+    Pagina2Component,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
